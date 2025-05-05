@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students per City</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+        table {
+            margin: auto;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="text-align:center;">Number of Students in Each City</h2>
+
+<table>
+    <tr>
+        <th>City</th>
+        <th>Number of Students</th>
+    </tr>
+    {% for address in data %}
+    <tr>
+        <td>{{ address.city }}</td>
+        <td>{{ address.student_count }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

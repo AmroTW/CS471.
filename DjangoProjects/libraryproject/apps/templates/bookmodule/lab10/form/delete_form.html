@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Book</title>
+</head>
+<body>
+    <h1>Are you sure you want to delete this book?</h1>
+    <p>{{ book.title }} - {{ book.author }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, delete</button>
+    </form>
+    <a href="{% url 'list_books_form' %}">Cancel</a>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %} Books Priced ≤ 80 {% endblock %}
+
+{% block content %}
+  <h1>Books with Price ≤ 80</h1>
+
+  {% if books %}
+    {% for book in books %}
+      <div>
+        <h2>{{ book.title }}</h2>
+        <p><strong>Author:</strong> {{ book.author }}</p>
+        <p><strong>Edition:</strong> {{ book.edition }}</p>
+        <p><strong>Price:</strong> {{ book.price }}</p>
+        <hr>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>No books found in this price range.</p>
+  {% endif %}
+{% endblock %}

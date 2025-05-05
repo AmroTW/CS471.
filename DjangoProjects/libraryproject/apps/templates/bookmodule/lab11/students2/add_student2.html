@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Student</title>
+</head>
+<body>
+    <h1>Add Student</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        
+        <p>
+            <label for="{{ form.name.id_for_label }}">Name:</label>
+            {{ form.name }}
+            {% if form.name.errors %}
+                <span style="color:red">{{ form.name.errors }}</span>
+            {% endif %}
+        </p>
+
+        <p>
+            <label for="{{ form.age.id_for_label }}">Age:</label>
+            {{ form.age }}
+            {% if form.age.errors %}
+                <span style="color:red">{{ form.age.errors }}</span>
+            {% endif %}
+        </p>
+
+        <p>
+            <label for="{{ form.addresses.id_for_label }}">Addresses:</label>
+            {{ form.addresses }}
+            {% if form.addresses.errors %}
+                <span style="color:red">{{ form.addresses.errors }}</span>
+            {% endif %}
+        </p>
+
+        <button type="submit">Save</button>
+        <a href="{% url 'list_students2' %}">Back to List</a>
+    </form>
+</body>
+</html>

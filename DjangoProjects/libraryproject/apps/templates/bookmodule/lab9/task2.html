@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course Student Count</title>
+</head>
+<body>
+    <h1>Courses and Number of Registered Students</h1>
+    <ul>
+        {% for course in course_counts %}
+            <li>{{ course.title }}: {{ course.count }} students</li>
+        {% empty %}
+            <li>No courses available.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

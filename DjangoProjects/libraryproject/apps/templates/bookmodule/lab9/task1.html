@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Departments and Student Count</title>
+</head>
+<body>
+    <h1>Departments and Student Count</h1>
+    <ul>
+        {% for dept in departments %}
+            <li>{{ dept.name }} - {{ dept.student_count }} student(s)</li>
+        {% empty %}
+            <li>No departments found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
